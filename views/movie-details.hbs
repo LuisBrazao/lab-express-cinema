@@ -1,0 +1,25 @@
+{{!-- views/book-details.hbs --}}
+<div class="card mb-3" style="max-width: 900px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img class="card-img" src="{{movie.image}}" alt="{{movie.title}}" style="max-height: 500px; max-width: 100px" />
+        </div>
+        <div class="col-md-8">
+            <a href="/movies">Go back</a>
+            <p class="card-text"> <strong> {{movie.title}}</strong></p>
+            <p class="card-text"> <strong> Director: {{movie.director}}</strong></p>
+            <p class="card-tet"> <strong> Stars</strong></p>
+            <ul>
+                {{#each movie.stars}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p class="card-text">{{movie.description}}</p>
+
+            <p class="card-text">
+                {{#each movie.showtimes}}
+                {{this}} |
+                {{/each}}
+        </div>
+    </div>
+</div>
